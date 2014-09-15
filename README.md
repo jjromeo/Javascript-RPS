@@ -1,1 +1,1 @@
-Using Javascript to rewrite a game of Rock Paper Scissors originally written in Ruby, including testing using jasmine.
+Using Javascript to rewrite a game of Rock Paper Scissors originally written in Ruby, including testing using jasminegit git .
