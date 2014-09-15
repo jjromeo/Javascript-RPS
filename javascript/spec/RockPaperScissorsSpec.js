@@ -215,4 +215,26 @@ describe("Rock-Paper-Scissors", function() {
 
   });
 
+  describe('it writes a sentence to declare the winner', function() {
+
+    it('should display the name of the winner', function() {
+          player1.picks('rock');
+          player2.picks('lizard');
+          expect(game.displayResult()).toContain('Alex')
+
+    });
+
+     it('should display the name of the loser', function() {
+          player1.picks('rock');
+          player2.picks('lizard');
+          expect(game.displayResult()).toContain('Bob')
+
+    });
+
+     
+
+
+  });
+
+
 });

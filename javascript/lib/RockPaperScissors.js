@@ -1,3 +1,5 @@
+var loser;
+
 function Player(name) {
   this.name = name;
 }
@@ -9,11 +11,6 @@ Player.prototype.picks = function(pick) {
 function Game(player1, player2) {
   this.player1 = player1;
   this.player2 = player2;
-
- //  function samePick() {
-	//   if(this.player1.pick === this.player2.pick)
-	//   	return true
-	// }
 
 }
 
@@ -33,12 +30,19 @@ Game.prototype._isSamePick = function() {
 Game.prototype.winner = function() {
 	if(this._isSamePick()) return null;
     if(this.PAIRS[this.player1.pick].beats.indexOf(this.player2.pick) > -1){
+    	this.loser = this.player2
     	return this.player1;
     }
     else {
+    	this.loser = this.player1
     	return this.player2;
     }
 };
+
+Game.prototype.displayResult = function() {
+	return this.winner().name + "beats" + this.loser.name;
+};
+
 
 
 
