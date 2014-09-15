@@ -19,8 +19,10 @@ function Game(player1, player2) {
 
 Game.prototype.PAIRS = {
 rock: 		{beats: ["lizard", "scissors"]},
-paper: 		{beats: ["rock"]},
-scissors: 	{beats: ["paper"]}
+paper: 		{beats: ["rock", "Spock"]},
+scissors: 	{beats: ["paper", "lizard"]},
+lizard: 	{beats: ["Spock", "paper"]},
+Spock: 		{beats: ["scissors", "rock"]}
 };
 
 Game.prototype._isSamePick = function() {
