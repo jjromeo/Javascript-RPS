@@ -1,4 +1,4 @@
-var loser;
+
 
 function Player(name) {
   this.name = name;
@@ -15,11 +15,11 @@ function Game(player1, player2) {
 }
 
 Game.prototype.PAIRS = {
-rock: 		{beats: ["lizard", "scissors"]},
-paper: 		{beats: ["rock", "Spock"]},
-scissors: 	{beats: ["paper", "lizard"]},
-lizard: 	{beats: ["Spock", "paper"]},
-Spock: 		{beats: ["scissors", "rock"]}
+rock: 		{lizard: "crushes", scissors: "crushes"},
+paper: 		{rock: "covers", Spock: "disproves"},
+scissors: 	{paper: "cuts", lizard: "decapitates"},
+lizard: 	{Spock: "poisons", paper: "eats"},
+Spock: 		{scissors: "smashes", rock: "vaporizes"}
 };
 
 Game.prototype._isSamePick = function() {
@@ -29,7 +29,7 @@ Game.prototype._isSamePick = function() {
 
 Game.prototype.winner = function() {
 	if(this._isSamePick()) return null;
-    if(this.PAIRS[this.player1.pick].beats.indexOf(this.player2.pick) > -1){
+    if(this.PAIRS[this.player1.pick][this.player2.pick] ){
     	this.loser = this.player2
     	return this.player1;
     }
@@ -40,9 +40,11 @@ Game.prototype.winner = function() {
 };
 
 Game.prototype.displayResult = function() {
-	return this.winner().name + "beats" + this.loser.name;
+	if(this.winner())
+		return this.winner().name + "'s " + this.winner().pick + " " + this.PAIRS[this.winner().pick][this.loser.pick] + " " + this.loser.name + "'s " + this.loser.pick;
+	else
+		return "The game has resulted in a draw."
 };
-
 
 
 
