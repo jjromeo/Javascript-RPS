@@ -1,0 +1,30 @@
+.choices img {
+	opacity: 0.1;
+	transition: opacity, ease, 1s;
+}
+
+.choices img:hover {
+	opacity: 1;
+}
+
+.choices {
+	text-align: center;
+	cursor: pointer;
+}
+
+header {
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+body {
+	
+}
+
+#input-message {
+	text-align: center;
+}
+
+#result {
+	text-align: center;
+}
