@@ -1,1 +1,1 @@
-Using Javascript to rewrite a game of Rock Paper Scissors originally written in Ruby, including testing using jasminegit git .
+Rock Paper Scissors Javascript=======This was a project designed to allow us to practice javascript usage whilstalso introducing us to the wonderful jquery.Technologies used include:------------------------ jquery- jasmine- jquery- htmlHow to use: -------------1. Git clone repo 2. Open index.html.3. Enter your name and click away
